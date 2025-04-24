@@ -1,25 +1,28 @@
 using Codice.Client.BaseCommands;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class charatercontrler : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField]
-    private float moveSpeed = 3f;
+    private PlayerInput playerInput;
+    
+    private InputAction moveAction;
+
+    private void Start()
+    {
+        moveAction = playerInput.actions.FindAction["Move"];
+    }
 
     // Update is called once per frame
     void Update()
     {
-           // 水平輸入(左右)
-        var horizontal = Input.GetAxis("Horizontal");
-          // 垂直輸入(上下)
-        var vertical = Input.GetAxis("Vertical");
-         // 移動方向
-        var direction = new Vector3(horizontal , vertical , 0); 
+           
+        var moveVector2 = moveAction.ReadValue<Vector2>() 
+        
         // 修正斜著走比較快的問題
-        direction = direction.normalized;
-        // 移動向量 deltaTime = 1/fps , 1/60 = 0.16667f
-        var movement  = direction * moveSpeed * Time.deltaTime;
+        var direction = new Vector3(moveVector2.x,  moveVector2.y , 0);
         transform.position += movement;
     }
 }
