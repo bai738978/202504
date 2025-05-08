@@ -10,8 +10,10 @@ public class CharacterContoller : MonoBehaviour
 
     [SerializeField]
     private PlayerInput playerInput;
+    
     private InputAction interInputAction;
     private InputAction moveAction;
+    private bool        dead;
 
     private void Start()
     {
