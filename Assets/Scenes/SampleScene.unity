@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 120607588}
   - component: {fileID: 120607587}
+  - component: {fileID: 120607589}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -207,6 +208,20 @@ Transform:
   - {fileID: 1582426158}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &120607589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120607586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ede22d8e134a314f97d6a61915c33ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogData: {fileID: 11400000, guid: bf9337207fd38ef46b3c1ca5397adebc, type: 2}
+  dialog: {fileID: 1715870886}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +724,7 @@ GameObject:
   - component: {fileID: 1715870882}
   - component: {fileID: 1715870885}
   - component: {fileID: 1715870884}
+  - component: {fileID: 1715870886}
   m_Layer: 5
   m_Name: "Text (TMP)_\u5C0D\u8A71\u6587\u5B57"
   m_TagString: Untagged
@@ -755,7 +771,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<shake>\u4F60\u597D</shake> <fade>\u4E16\u754C</fade>"
+  m_text: "<shake>\u4F60\u597D</> <fade>\u4E16\u754C</>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e042bbad57fceb48b3f81988fc1d908, type: 2}
   m_sharedMaterial: {fileID: -7141697973449956164, guid: 6e042bbad57fceb48b3f81988fc1d908, type: 2}
@@ -921,8 +937,8 @@ MonoBehaviour:
   sceneKeywordDatabase: {fileID: 0}
   database: {fileID: 0}
   maySkip: 1
-  writeOnStart: 1
-  writeOnNewText: 1
+  writeOnStart: 0
+  writeOnNewText: 0
   useScaledTime: 1
   delays:
     delay: 0.035
@@ -940,7 +956,20 @@ MonoBehaviour:
   useDefaultKeywordDatabase: 0
   initDatabase: 1
   eventsEnabled: 0
-  commandsEnabled: 1
+  commandsEnabled: 0
+--- !u!114 &1715870886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715870880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa8b711394b0524cacc0da8b4b7cdcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tmpWirter: {fileID: 1715870885}
 --- !u!1001 &8154847736119597610
 PrefabInstance:
   m_ObjectHideFlags: 0
