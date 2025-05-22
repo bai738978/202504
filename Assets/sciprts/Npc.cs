@@ -1,3 +1,4 @@
+using Codice.CM.Common.Serialization;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -9,11 +10,17 @@ public class Npc : MonoBehaviour
     [SerializeField]
     private Dialog dialog;
 
-    [Button("播放對話")]
-    public void PlayDialog()
+    [Button("開始對話")]
+    public void StartDialog()
     {
-        dialog.SetText(dialogData.dialogTexts[0]);
-        dialog.PlayWriter();
+        dialog.SetTexts(dialogData.dialogTexts);
+        dialog.StartDialog();
+    }
+ 
 
+    [Button("播放下一段對話")]
+    public void PlayNextDialog()
+    {
+        dialog.PlayNextDialog();
     }
 }
